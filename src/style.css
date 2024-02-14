@@ -16,18 +16,14 @@ p {font-family:"Protest Revolution";}
 .loader {
     width: 84px;
     height: 84px;
-position: relative;
-top: 300px;
-right: 0;
-left: 50%;
-  
+    position: relative;
 }
 
 .loader:before,
 .loader:after {
     content: "";
     position: absolute;
-    right:0 ;
+    right: 0;
     top: 0;
     width: 84px;
     height: 84px;
