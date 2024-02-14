@@ -14,40 +14,42 @@ p {font-family:"Protest Revolution";}
 
 
 .loader {
-    width: 84px;
-    height: 84px;
-    position: relative;
-}
-
-.loader:before,
-.loader:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 84px;
-    height: 84px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: #FF3D00;
-    animation: push 1s infinite linear alternate;
+    display: block;
+    margin: 15px auto;
+    position: relative;
+    box-sizing: border-box;
+    animation: zeroRotation 1s linear infinite alternate;
 }
 
-.loader:after {
-    top: auto;
-    bottom: 0;
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
     left: 0;
-    background: #fff;
-    animation-direction: alternate-reverse;
+    top: 0;
+    background: #FF3D00;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
 }
 
-@keyframes push {
+.loader::before {
+    left: auto;
+    right: 0;
+    transform: translate(50%, 100%);
+}
+
+@keyframes zeroRotation {
     0% {
-        width: 14px;
-        height: 14px;
+        transform: scale(1) rotate(0deg);
     }
 
     100% {
-        width: 84px;
-        height: 84px;
+        transform: scale(0) rotate(360deg);
     }
 }
